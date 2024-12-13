@@ -1,11 +1,16 @@
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
-import {animate, state, style, transition, trigger} from "@angular/animations";
 import { Renderer2 } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { animate, state, style, transition, trigger } from "@angular/animations";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  standalone: true,
+  imports: [CommonModule, HeaderComponent],
   animations: [
     trigger('imageAnimation', [
       state('in', style({ transform: 'translateY(0)' })),
