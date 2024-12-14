@@ -1,10 +1,15 @@
-/* General styles */
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   color: #333;
   font-size: 1.2em; /* Larger font */
+}
+
+/* Container styles */
+.container {
+  display: flex;
 }
 
 /* Sidebar styles */
@@ -47,157 +52,100 @@ body {
   font-size: 1.2em;
 }
 
-/* Main content styles */
-main {
-  flex: 1;
-  padding: 40px;
-  margin-left: 320px; /* Adjusted margin to match sidebar width */
-  background-color: #fff;
-  box-sizing: border-box;
+/* Main content */
+.payment-container {
+  margin-left: 400px;
+  padding: 40px; /* Augmenté */
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+h1 {
+  font-size: 36px; /* Taille de police augmentée */
+  margin-bottom: 30px;
 }
 
-
-.company-info {
-  display: flex;
-  flex-direction: column; /* Stack company name and RCS vertically */
-}
-
-.outstanding-amount {
-  background-color: #fff; /* White background */
-  border: 2px solid #aaa; /* Slightly darker border */
-  padding: 30px; /* Increase padding significantly */
-  text-align: center; /* Center text */
-  width: 400px; /* Increase width significantly */
-  border-radius: 15px; /* More rounded corners */
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for more depth */
-}
-
-.outstanding-amount p {
-  font-size: 20px; /* Larger font size for paragraph */
-  color: #333; /* Dark gray text color */
-  font-family: sans-serif;
-  margin-bottom: 20px; /* Add more space below the paragraph */
-}
-
-.outstanding-amount span {
-  font-size: 50px; /* Large font size for the value */
-  color: #00ff15; /* Brighter blue for emphasis */
-  font-weight: bold;
-  font-family: sans-serif;
-}
-
-/* Billers Section Styles */
-.billers-section {
-  padding: 20px;
-}
-.billers-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+/* Tabs */
 .tabs {
   display: flex;
-  gap: 10px;
+  gap: 15px; /* Augmenté l'espace entre les onglets */
+  margin-bottom: 30px;
 }
 
-.tab{
+.tab {
+  padding: 15px 30px; /* Agrandi */
+  font-size: 20px; /* Police plus grande */
   background-color: #e0e0e0;
-  color: #333;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
 }
 
-.tab:hover,
-.tab.active{
-  background-color: #4CAF50;
+.tab.active {
+  background-color: #31b23d;
   color: white;
+  font-size: 22px; /* Police plus grande */
 }
 
-.category-filter select{
-  padding: 10px;
-  border-radius: 5px;
+/* Filter styles */
+.filter-container {
+  margin-bottom: 30px;
+}
+
+.filter-container select {
+  width: 100%;
+  padding: 15px; /* Agrandi */
   border: 1px solid #ccc;
-  font-size: 1em;
+  border-radius: 8px;
+  font-size: 18px; /* Taille de police augmentée */
 }
 
-
-.billers-grid {
+/* Creditor card styles */
+.creditor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Taille minimale des cartes augmentée */
+  gap: 30px; /* Augmenté l'espace entre les cartes */
+}
+
+.creditor-card {
+  background-color: white;
+  padding: 25px; /* Agrandi */
+  border: 1px solid #ddd;
+  border-radius: 15px; /* Bords arrondis plus visibles */
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Augmenté l'ombre pour un effet plus visible */
+}
+
+.creditor-card img {
+  max-width: 150px; /* Agrandi */
   margin-bottom: 20px;
 }
 
-.biller-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
+.creditor-card h3 {
+  font-size: 24px; /* Taille de police augmentée */
+  margin: 15px 0;
+  color: #333;
+}
+
+.creditor-card p {
+  font-size: 20px; /* Taille de police augmentée */
+  color: #666;
+}
+
+/* Buttons */
+button {
+  padding: 15px 30px; /* Taille des boutons agrandie */
+  font-size: 20px; /* Police augmentée */
+  background-color: #31b23d;
+  color: white;
+  border: none;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Ajout d'une ombre pour un effet de surélévation */
 }
 
-.biller-card:hover{
-  transform: scale(1.03);
-}
-
-.biller-logo {
-  max-width: 100px;
-  max-height: 70px;
-  margin-right: 20px;
-}
-.biller-details{
-  flex: 1;
-}
-
-.biller-details h4 {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-.biller-details ul{
-  list-style: none;
-  padding: 0;
-}
-
-.biller-details ul li {
-  font-size: 1em;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 992px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    position: relative;
-    margin-bottom: 25px;
-  }
-  main {
-    margin-left: 0;
-    padding: 20px;
-  }
-  .billers-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .outstanding-amount {
-    width: 100%; /* Make full width on smaller screens */
-    margin-bottom: 20px; /* Add a bit of margin for better spacing */
-  }
-
+button:hover {
+  background-color: #27b300;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Effet hover plus visible */
 }

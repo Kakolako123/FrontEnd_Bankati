@@ -1,128 +1,86 @@
+<body>
 <div class="container">
+  <!-- Sidebar -->
   <div class="sidebar">
     <div class="test">
       <ul>
-        <li><a routerLink="/dashboard" style="color: white; text-decoration: none"><i class="fas fa-tachometer-alt"
-                                                                                      style="color: white"></i> Dashboard</a></li>
-        <li><a routerLink="/cart" style="color: white; text-decoration: none"><i class="fas fa-credit-card"
-                                                                                 style="color: white"></i> Bank Card</a></li>
-        <li style="background-color: #3e8e41;"><a routerLink="/facture" style="color: white; text-decoration: none"><i class="fas fa-file-invoice"
-                                                                                                                       style="color: white"></i> Factures</a></li>
-        <li><a routerLink="/currency" style="color: white; text-decoration: none"><i
-          class="fas fa-coins"></i> Converter</a></li>
-        <li><a routerLink="/virement" style="color: white; text-decoration: none"><i class="fas fa-chart-bar" style="color: white"></i> Virement</a></li>
-        <li><a routerLink="/recharge" style="color: white; text-decoration: none"><i class="fas fa-bookmark" style="color: white"></i> Recharge</a></li>
-        <li><i class="fas fa-cog" style="color: white"></i> Settings</li>
+        <li>
+          <a routerLink="/dashboard" style="color: white; text-decoration: none"
+          ><i class="fas fa-tachometer-alt" style="color: white"></i>
+            Dashboard</a
+          >
+        </li>
+        <li>
+          <a routerLink="/cart" style="color: white; text-decoration: none"
+          ><i class="fas fa-credit-card" style="color: white"></i> Bank
+            Card</a
+          >
+        </li>
+        <li>
+          <a routerLink="/facture" style="color: white; text-decoration: none"
+          ><i class="fas fa-file-invoice" style="color: white"></i>
+            Factures</a
+          >
+        </li>
+        <li>
+          <a routerLink="/currency" style="color: white; text-decoration: none"
+          ><i class="fas fa-coins"></i> Converter</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/virement"
+            style="color: white; text-decoration: none"
+          ><i class="fas fa-chart-bar" style="color: white"></i>
+            Virement</a
+          >
+        </li>
+        <li>
+          <a routerLink="/recharge" style="color: white; text-decoration: none"
+          ><i class="fas fa-bookmark" style="color: white"></i>
+            Recharge</a
+          >
+        </li>
+        <li style="background-color: #3e8e41">
+          <a
+            routerLink="/creancier"
+            style="color: white; text-decoration: none"
+          ><i class="fas fa-cog" style="color: white"></i> Creancier</a
+          >
+        </li>
         <li><i class="fas fa-user" style="color: white"></i> Profile</li>
         <li><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</li>
       </ul>
     </div>
   </div>
 
-  <main>
-    <header>
-      <div class="company-info">
-        <div class="company-name">MyCompany</div>
-        <div class="rcs">RCS : 442441630</div>
+  <!-- Main Content -->
+  <div class="payment-container">
+    <h1>Paiement de facture</h1>
+    <div class="tabs">
+      <button class="tab active">Liste des créanciers</button>
+      <button class="tab">Historique</button>
+    </div>
+    <div class="filter-container">
+      <select (change)="onFilterChange($event)">
+        <option value="all">Toutes les catégories</option>
+        <option value="taxes">Impôts, Taxes et Frais Portuaires</option>
+        <option value="electricity_water">Eau et Électricité</option>
+        <option value="internet_purchases">Achats Internet</option>
+      </select>
+    </div>
+    <div class="creditor-grid">
+      <div
+        class="creditor-card"
+        *ngFor="let creditor of filteredCreditors"
+        [routerLink]="'/facture'"
+        style="cursor: pointer;"
+      >
+        <img [src]="creditor.image" [alt]="creditor.name" />
+        <h3>{{ creditor.name }}</h3>
+        <p>{{ creditor.description }}</p>
       </div>
-      <div class="contact-info">
-        <div class="icon"><i class="fas fa-map-marker-alt"></i></div> <div>19 Rue Edouard Vaillant 37000 Tours - France</div>
-        <div class="icon"><i class="fas fa-envelope"></i></div> <div>contactmycompany.com</div>
-        <div class="icon"><i class="fas fa-phone"></i></div> <div>02 47 68 48 69</div>
-      </div>
-      <div class="outstanding-amount">
-        <p>Montant restant dû :</p>
-        <span>13 000,00 €</span>
-      </div>
-    </header>
-
-    <section class="billers-section">
-      <h2 style="text-align: center; margin-bottom: 30px;">Paiement de facture</h2>
-      <div class="billers-header">
-        <div class="tabs">
-          <button #tabButton class="tab active" data-tab="list">Liste des créanciers</button>
-          <button #tabButton class="tab" data-tab="history">Historique</button>
-        </div>
-        <div class="category-filter">
-          <select id="category-select">
-            <option value="all">Toutes les catégories</option>
-            <option value="achats">Achats Internet</option>
-            <option value="eau">Eau et Électricité</option>
-            <option value="impots">Impôts, Taxes et Frais Portuaires</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="billers-grid" id="billers-grid">
-
-        <div #billerCard class="biller-card" data-category="achats" >
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=Express Relais" alt="Express Relais" class="biller-logo">
-          <div class="biller-details">
-            <h4>Express Relais</h4>
-            <ul>
-              <li>> factures Express Relais</li>
-            </ul>
-          </div>
-        </div>
-
-        <div #billerCard class="biller-card" data-category="achats">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=Winxo" alt="Winxo" class="biller-logo">
-          <div class="biller-details">
-            <h4>Winxo</h4>
-            <ul>
-              <li>> factures Winxo</li>
-            </ul>
-          </div>
-        </div>
-
-        <div #billerCard class="biller-card" data-category="achats">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=Royal Air Maroc" alt="Royal Air Maroc" class="biller-logo">
-          <div class="biller-details">
-            <h4>Royal Air Maroc</h4>
-            <ul>
-              <li>> factures Royal Air Maroc</li>
-            </ul>
-          </div>
-        </div>
-        <div #billerCard class="biller-card" data-category="eau">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=SRM Casablanca-Settat" alt="SRM Casablanca-Settat" class="biller-logo">
-          <div class="biller-details">
-            <h4>SRM Casablanca-Settat</h4>
-            <ul>
-              <li>> factures SRM Casablanca-Settat</li>
-            </ul>
-          </div>
-        </div>
-        <div #billerCard class="biller-card" data-category="eau">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=RADEM" alt="RADEM" class="biller-logo">
-          <div class="biller-details">
-            <h4>RADEM</h4>
-            <ul>
-              <li>> factures RADEM</li>
-            </ul>
-          </div>
-        </div>
-        <div #billerCard class="biller-card" data-category="impots">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=Marsa Maroc" alt="Marsa Maroc" class="biller-logo">
-          <div class="biller-details">
-            <h4>Marsa Maroc</h4>
-            <ul>
-              <li>> factures Marsa Maroc</li>
-            </ul>
-          </div>
-        </div>
-        <div #billerCard class="biller-card" data-category="impots">
-          <img src="https://via.placeholder.com/150x70/0000FF/808080?Text=Ministère de la justice" alt="Ministère de la justice" class="biller-logo">
-          <div class="biller-details">
-            <h4>Ministère de la justice</h4>
-            <ul>
-              <li>> factures Ministère de la justice</li>
-            </ul>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
-  </main>
+    </div>
+  </div>
 </div>
+</body>
