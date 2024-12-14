@@ -1,16 +1,27 @@
 /* Sidebar styles */
+body {
+  margin: 0;
+  background: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
 .sidebar {
   width: 320px;
   background-color: #343a40;
   color: white;
-  padding: 25px; /* Increased padding */
+  padding: 25px;
   height: 100vh;
   overflow-y: auto;
   position: fixed;
   top: 0;
   left: 0;
   box-shadow: 3px 0 12px rgba(0, 0, 0, 0.1);
-  font-size: 1.6em; /* Increased font size */
+  font-size: 1.45em;
 }
 
 .test {
@@ -24,7 +35,7 @@
 }
 
 .sidebar li {
-  padding: 20px 0; /* Increased padding */
+  padding: 20px 0;
   border-bottom: 1px solid #444;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -35,8 +46,13 @@
 }
 
 .sidebar li i {
-  margin-right: 15px; /* Larger icons */
-  font-size: 1.4em; /* Increased icon size */
+  margin-right: 15px;
+  font-size: 1.2em;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Main container */

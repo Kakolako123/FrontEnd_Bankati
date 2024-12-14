@@ -2,15 +2,17 @@ import {Component, HostListener} from '@angular/core';
 import jsPDF from "jspdf";
 import {CommonModule, NgClass} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-creancier',
   standalone: true,
-    imports: [
-      CommonModule,
-      NgClass,
-      FormsModule
-    ],
+  imports: [
+    CommonModule,
+    NgClass,
+    FormsModule,
+    RouterLink
+  ],
   templateUrl: './creancier.component.html',
   styleUrl: './creancier.component.css'
 })

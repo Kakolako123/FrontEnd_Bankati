@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import {ChangePasswordComponent} from "./change-password/change-password.component";
+import {VirementComponent} from "./virement/virement.component";
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import {ChangePasswordComponent} from "./change-password/change-password.compone
     ChangePasswordComponent,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    VirementComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

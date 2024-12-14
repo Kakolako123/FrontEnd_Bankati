@@ -14,6 +14,8 @@ import {CartComponent} from "./cart/cart.component";
 import {ChangePasswordComponent} from "./change-password/change-password.component";
 import {AdminComponent} from "./admin/admin.component";
 import {CreancierComponent} from "./creancier/creancier.component";
+import {VirementComponent} from "./virement/virement.component";
+import {RechargeComponent} from "./recharge/recharge.component";
 
 export const routes: Routes = [
   {
@@ -21,6 +23,11 @@ export const routes: Routes = [
     redirectTo: 'total',
     pathMatch: 'full'
   },
+  // {
+  //   path: '',
+  //   redirectTo: '/virement',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'signup1',
     component: Signup1Component
@@ -76,5 +83,13 @@ export const routes: Routes = [
   {
     path: 'creancier',
     component: CreancierComponent
+  },
+  {
+    path: 'virement',
+    component: VirementComponent
+  },
+  {
+    path: 'recharge',
+    component: RechargeComponent
   },
 ];
