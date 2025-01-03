@@ -1,0 +1,89 @@
+<body>
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="test">
+      <ul>
+        <li>
+          <a routerLink="/dashboard" style="color: white; text-decoration: none"
+          ><i class="fas fa-tachometer-alt" style="color: white"></i>
+            Dashboard</a
+          >
+        </li>
+        <li>
+          <a routerLink="/cart" style="color: white; text-decoration: none"
+          ><i class="fas fa-credit-card" style="color: white"></i> Bank
+            Card</a
+          >
+        </li>
+        <li>
+          <a routerLink="/facture" style="color: white; text-decoration: none"
+          ><i class="fas fa-file-invoice" style="color: white"></i>
+            Factures</a
+          >
+        </li>
+        <li>
+          <a routerLink="/currency" style="color: white; text-decoration: none"
+          ><i class="fas fa-coins"></i> Converter</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/virement"
+            style="color: white; text-decoration: none"
+          ><i class="fas fa-chart-bar" style="color: white"></i>
+            Virement</a
+          >
+        </li>
+        <li>
+          <a routerLink="/recharge" style="color: white; text-decoration: none"
+          ><i class="fas fa-bookmark" style="color: white"></i>
+            Recharge</a
+          >
+        </li>
+        <li style="background-color: #3e8e41">
+          <a
+            routerLink="/creancier"
+            style="color: white; text-decoration: none"
+          ><i class="fas fa-cog" style="color: white"></i> Creancier</a
+          >
+        </li>
+        <li><i class="fas fa-user" style="color: white"></i> Profile</li>
+        <li><i class="fas fa-sign-out-alt" style="color: white"></i> Logout</li>
+      </ul>
+    </div>
+  </div>
+  <div class="crypto-portfolio">
+    <div class="left-section">
+      <img src="assets/pictures/Capture.PNG" alt="Crypto Character" class="character" />
+    </div>
+    <div class="right-section" style="  width: 1600px;">
+      <h1>Build Your Crypto Portfolio</h1>
+      <p>Start your first trade with these easy steps.</p>
+      <div class="step" (click)="navigateTo('fund-account')">
+        <div class="icon"><span>👤</span></div>
+        <div class="content">
+          <h3>Fund your account</h3>
+          <p>Add funds to your crypto account to start trading crypto. You can add funds with a variety of payment methods.</p>
+        </div>
+      </div>
+      <div class="step" (click)="navigateTo('verify-identity')">
+        <div class="icon"><span>🪪</span></div>
+        <div class="content">
+          <h3>Verify your identity</h3>
+          <p>Complete the identity verification process to secure your account and transactions.</p>
+        </div>
+      </div>
+      <div class="step" (click)="navigateTo('virementCrypto')">
+        <div class="icon"><span>📈</span></div>
+        <div class="content">
+          <h3>Start trading</h3>
+          <p>You're good to go! Buy/sell crypto, set up recurring buys for your investments, and discover what Binance has to offer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>

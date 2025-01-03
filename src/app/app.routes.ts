@@ -16,6 +16,8 @@ import {AdminComponent} from "./admin/admin.component";
 import {CreancierComponent} from "./creancier/creancier.component";
 import {VirementComponent} from "./virement/virement.component";
 import {RechargeComponent} from "./recharge/recharge.component";
+import {CryptoComponent} from "./crypto/crypto.component";
+import {VirementCryptoComponent} from "./virement-crypto/virement-crypto.component";
 
 export const routes: Routes = [
   {
@@ -91,5 +93,13 @@ export const routes: Routes = [
   {
     path: 'recharge',
     component: RechargeComponent
+  },
+  {
+    path: 'crypto',
+    component: CryptoComponent
+  },
+  {
+    path: 'virementCrypto',
+    component: VirementCryptoComponent
   },
 ];
