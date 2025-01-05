@@ -1,0 +1,62 @@
+<div class="donation-container">
+  <div class="step-container">
+    <!-- Première carte -->
+    <div class="step" [class.active]="currentStep === 0" [style.zIndex]="currentStep === 0 ? 3 : 1">
+      <div class="step-content">
+        <img src="/assets/pictures/gift_hand.png" alt="Gift Hand" class="card-image">
+      </div>
+      <div class="step-description">
+        <h2>Étape 1 : Faites un Don</h2>
+        <p>Dans cette étape, nous vous demandons de choisir un cadeau que vous souhaitez offrir en donation. Ces dons sont essentiels pour soutenir diverses causes et aider ceux qui en ont besoin. En choisissant un cadeau, vous apportez un sourire et de l'espoir à quelqu'un dans le besoin. Prenez le temps de bien examiner les options disponibles avant de procéder.</p>
+      </div>
+      <div class="step-footer">
+        <button class="continue-btn" (click)="nextStep()" *ngIf="currentStep < 2">SUIVANT</button>
+      </div>
+    </div>
+
+    <!-- Deuxième carte -->
+    <div class="step" [class.active]="currentStep === 1" [style.zIndex]="currentStep === 1 ? 3 : 1">
+      <div class="step-content">
+        <img src="/assets/pictures/heart.png" alt="Heart" class="card-image">
+      </div>
+      <div class="step-description">
+        <h2>Étape 2 : Montrez de l'Amour</h2>
+        <p>Maintenant que vous avez sélectionné votre cadeau, nous vous demandons d'envoyer votre amour ! Montrez votre appréciation envers le destinataire et assurez-vous qu'il se sente spécial.</p>
+
+        <div class="form-group">
+          <!-- Choix de la société (Picklist) -->
+          <label for="company">Société :</label>
+          <select id="company" [(ngModel)]="selectedCompany" name="company" class="form-control">
+            <option value="company1">Société 1</option>
+            <option value="company2">Société 2</option>
+            <option value="company3">Société 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <!-- Choix du montant du don -->
+          <label for="donationAmount">Montant du don :</label>
+          <input type="number" id="donationAmount" [(ngModel)]="donationAmount" name="donationAmount" class="form-control" placeholder="Entrez le montant" min="1">
+        </div>
+      </div>
+      <div class="step-footer">
+        <button class="continue-btn" style="margin-right: 10px;"  (click)="nextStep()" *ngIf="currentStep < 2">SUIVANT</button>
+        <button class="continue-btn" (click)="previousStep()" *ngIf="currentStep > 0">PRÉCÉDENT</button>
+      </div>
+    </div>
+
+    <div class="step" [class.active]="currentStep === 2" [style.zIndex]="currentStep === 2 ? 3 : 1">
+      <div class="step-content">
+        <img src="/assets/pictures/person_with_gift.png" alt="Person with Gift" class="card-image">
+      </div>
+      <div class="step-description">
+        <h2>Étape 3 : Complétez la Donation</h2>
+        <p>Enfin, il est temps de compléter la donation. Confirmez votre cadeau et terminez le processus. Merci pour votre générosité !</p>
+      </div>
+      <div class="step-footer">
+        <button class="finish-btn" (click)="finish()" style="margin-right: 10px;">TERMINER</button>
+        <button class="continue-btn" (click)="previousStep()">PRÉCÉDENT</button>
+      </div>
+    </div>
+  </div>
+</div>

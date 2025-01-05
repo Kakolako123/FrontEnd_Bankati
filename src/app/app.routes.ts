@@ -18,6 +18,7 @@ import {VirementComponent} from "./virement/virement.component";
 import {RechargeComponent} from "./recharge/recharge.component";
 import {CryptoComponent} from "./crypto/crypto.component";
 import {VirementCryptoComponent} from "./virement-crypto/virement-crypto.component";
+import {DonationComponent} from "./donation/donation.component";
 
 export const routes: Routes = [
   {
@@ -101,5 +102,9 @@ export const routes: Routes = [
   {
     path: 'virementCrypto',
     component: VirementCryptoComponent
+  },
+  {
+    path: 'donation',
+    component: DonationComponent
   },
 ];
